@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchenge</title>
+    <script>
+        document.addEventListener('DOMcontentLoaded', function() {
+
+            fetch('https://api.frankfurter.app/latest?from=USD')
+            .then(response => response.json())
+
+            .then(data => {
+                const rate = data.rates.EUR;
+                document.querySelector('body').innerHTML = rate;
+            });
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
